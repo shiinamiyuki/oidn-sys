@@ -1,14 +1,17 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+pub mod binding;
+pub use binding::*;
 
 #[cfg(test)]
-mod tests {
-    use super::*;
+mod test {
+    use crate::OIDN_DEVICE_TYPE_CPU;
 
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn create_device() {
+        unsafe {
+            use crate::*;
+            let device = oidnNewDevice(OIDN_DEVICE_TYPE_CPU);
+            oidnCommitDevice(device);
+            oidnReleaseDevice(device);
+        }
     }
 }

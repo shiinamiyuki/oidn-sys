@@ -180,7 +180,7 @@ fn prebuild() -> Result<()> {
     gen(&"oidn".to_string())?;
     println!("cargo:rustc-link-search=native=oidn/bin/");
     println!("cargo:rustc-link-search=native=oidn/lib/");
-    println!("cargo:rustc-link-lib=dylib=OpenimageDenoise");
+    println!("cargo:rustc-link-lib=dylib=OpenImageDenoise");
 
     let get_dll_dir = |subdir: &str| {
         let dll_dir = PathBuf::from("oidn").join(subdir);
