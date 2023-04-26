@@ -1,5 +1,5 @@
 [package]
-name = "oidn-sys"
+name = "oidn_sys"
 version = "0.1.0"
 edition = "2021"
 
